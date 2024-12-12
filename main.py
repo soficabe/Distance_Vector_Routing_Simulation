@@ -64,5 +64,5 @@ if __name__ == "__main__":
             print("EXIT\n")
             break
 
-        net.update_dvs() # Funzione principale che aggiorna i distance vectors dei nodi finche' la rete non converge
+        net.update_dvs() # Funzione principale che scambia e aggiorna i distance vectors dei nodi finche' la rete non converge
         net.reset_network() # Resetta la rete per la prossima simulazione

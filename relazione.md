@@ -27,7 +27,7 @@ Il progetto è strutturato in tre file principali:
 ### **3.1. Classe Node**
 
 La classe [`Node`](node.py) implementa la logica del nodo e la gestione delle tabelle di routing:
-- Ogni nodo è identificato da un ID unico e mantiene un proprio distance vector `dv`, un dizionario in cui ogni chiave rappresentea la destinazione raggiungibile e il valore è una tupla `(distanza, next_hop)` che memorizza la distanza del nodo dalla destinazione e il prossimo nodo da cui passare per arrivare a destinazione.
+- Ogni nodo è identificato da un ID unico e mantiene un proprio distance vector `dv`, un dizionario in cui ogni chiave rappresenta la destinazione raggiungibile e il valore è una tupla `(distanza, next_hop)` che memorizza la distanza del nodo dalla destinazione e il prossimo nodo da cui passare per arrivare a destinazione.
 - La funzione `update_node_dv` permette al nodo di aggiornare il proprio DV in base ai distance vector ricevuti dai vicini. La funzione riceve il distance vector di un nodo adiacente e per tutte le destinazioni presenti in quest'ultimo vede se è possibile aggiornare la rotta corrispondente nel distance vector del nodo. L'aggiornamento avviene in caso la destinazione non sia ancora presente nella routing table o in caso la distanza dalla destinazione sia minore passando per il nodo vicino. La funzione restituisce un booleano che indica se il distance vector è stato aggiornato o meno a fronte del ricevimento della routing table del vicino.
 ```python
     def update_node_dv(self, neigbour_dv, neighbour_id):
@@ -77,7 +77,7 @@ print("DV INIZIALI: \n")
 
 Il file [`main.py`](main.py):
 - Configura e gestisce diverse topologie di rete mediante tre funzioni di simulazione predefinite (`simulation1`, `simulation2`, `simulation3`). 
-Forniamo qui il codice della `simulazione1` in quanto ci tornerà utile sapere la sua topologia di rete per mostrare successivamente un esempio di esecuzione e output del progetto. 
+Forniamo qui il codice della `simulation1` in quanto ci tornerà utile sapere la sua topologia di rete per mostrare successivamente un esempio di esecuzione e output del progetto. 
 ```python
 def simulation1(Network):
     print("SIMULATION 1 ----------------------------------------------------\n")
@@ -97,7 +97,7 @@ def simulation1(Network):
 - Permette all'utente di scegliere quale simulazione eseguire o uscire dal programma.
 
 
-## **4. Risultati e Output**
+## **4. Esecuzione e Output**
 
 Ogni simulazione produce i seguenti risultati:
 1. **Tabelle di routing iniziali**: inizialmente i distance vector contengono solo i costi tra i nodi direttamente adiacenti.

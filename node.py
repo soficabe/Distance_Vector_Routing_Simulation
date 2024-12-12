@@ -1,7 +1,6 @@
 class Node:
     '''
     Classe che rappresenta un nodo appartenente ad una network
-
     '''
 
     def __init__(self, node_id):
@@ -12,7 +11,7 @@ class Node:
         node_id (str): id del nodo
         '''
         self.node_id = node_id
-        self.dv: dict[str, tuple[int, str]] = {} #dizionario dei nodi raggiungibili:
+        self.dv: dict[str, tuple[int, str]] = {} #dizionario dei nodi raggiungibili (distance vector):
                                                  #chiave = destinazione, valore = tupla (distanza dalla destinazione, next_hop)
         self.dv[node_id] = (0, node_id) #aggiunge il nodo stesso al distance vector con costo 0
 
